@@ -1,0 +1,28 @@
+import machine
+import time
+
+# Configurar pines de entrada y salida
+pin_entrada1 = Pin(12, Pin.IN)
+pin_entrada2 = Pin(13, Pin.IN)
+pin_salida = Pin(14, Pin.OUT, value=1)
+  
+ 
+# Función para verificar si ambas entradas están en 1
+def verificar_entradas():
+    return pin_entrada1.value() == 1 and pin_entrada2.value() == 1
+  # significado de retun https://programacion.top/python/que-es-return-en-python/  
+  # info operaciones logicas https://j2logo.com/python/tutorial/operadores-en-python/
+
+  
+# Bucle principal
+while True:
+    if verificar_entradas():
+        time.sleep(0.12)  # Delay de 1 segundo
+        pin_salida.value(1)  # Activar salida en 1
+        time.sleep(5)  # Mantener salida activa por 5 segundos
+        pin_salida.value(0)  # Desactivar salida
+
+
+
+
+
