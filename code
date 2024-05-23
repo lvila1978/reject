@@ -17,9 +17,9 @@ def verificar_entradas():
 # Bucle principal
 while True:
     if verificar_entradas():
-        time.sleep(0.12)  # Delay de 1 segundo
+        time.sleep_ms(120)  # Delay de 120 msegundo
         pin_salida.value(1)  # Activar salida en 1
-        time.sleep(5)  # Mantener salida activa por 5 segundos
+        time.sleep_ms(200)  # Mantener salida activa por 200 msegundos
         pin_salida.value(0)  # Desactivar salida
 
 
